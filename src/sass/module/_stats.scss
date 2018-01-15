@@ -1,3 +1,27 @@
 .flex-container {
   display: flex;
+  justify-content: space-between;
+}
+
+.stats-container {
+  padding-right: 3rem;
+
+  .stats-child {
+    padding: 2.6rem;
+    min-width: 13rem;
+    text-align: center;
+
+    &:not(:last-child) {
+      border-right: 1px solid $text-color;
+    }
+
+    .stat-links {
+      font-size: 2.2rem;
+      text-decoration: none;
+
+      p {
+        color: $link-color;
+      }
+    }
+  }
 }

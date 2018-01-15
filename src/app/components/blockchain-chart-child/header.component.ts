@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { OnInit, OnChanges } from '@angular/core';
 import { Stats } from '../../models/stats/stats';
 
@@ -8,14 +8,9 @@ import { Stats } from '../../models/stats/stats';
 })
 export class HeaderComponent {
   @Input() stats: Stats;
+  @Output() buttonMouseOver: EventEmitter<number> = new EventEmitter<number>();
 
-  // ngOnInit() {
-  //   console.log(this.stats)
-  // }
-  //
-  // ngOnChanges(changes: SimpleChanges) {
-  //   console.log(changes);
-  //   console.log(this.stats)
-  //   // changes.prop contains the old and the new value...
-  // }
+  public mouseOver(number: number) {
+    this.buttonMouseOver.emit(number);
+  }
 }
