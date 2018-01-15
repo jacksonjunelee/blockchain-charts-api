@@ -10,7 +10,14 @@ export class HeaderComponent {
   @Input() stats: Stats;
   @Output() buttonMouseOver: EventEmitter<number> = new EventEmitter<number>();
 
-  public mouseOver(number: number) {
+  public selectedButton: number;
+
+  public isSelected(number: number): string {
+    return this.selectedButton && this.selectedButton !== number ? 'selected-button' : '';
+  }
+
+  public mouseOver(number: number): void {
+    this.selectedButton = number;
     this.buttonMouseOver.emit(number);
   }
 }

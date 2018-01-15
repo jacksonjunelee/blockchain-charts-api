@@ -1,5 +1,13 @@
-<div class="blockchain-chart" *ngIf="stats">
-  <blockchain-chart-header
-    [stats]="stats">
-  </blockchain-chart-header>
+<div class="blockchain-chart">
+  <div *ngIf="stats">
+    <blockchain-chart-header
+      [stats]="stats"
+      (buttonMouseOver)="showCharts($event)">
+    </blockchain-chart-header>
+  </div>
+  <div *ngIf="displayChartNumber">
+    <blockchain-chart-group
+      [displayChartNumber]="displayChartNumber">
+    </blockchain-chart-group>
+  </div>
 </div>

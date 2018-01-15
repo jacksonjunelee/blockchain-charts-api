@@ -8,5 +8,23 @@
 }
 
 .button-group {
-  margin: 1.15rem;
+  margin-top: 1.15rem;
+
+  .selected-button {
+    background-color: #99def7;
+  }
+}
+
+.chart-group {
+  background-color: $link-color;
+
+  .img-container {
+    margin: 1rem;
+    text-align: center;
+    
+    img {
+      width: 17rem;
+      height: 13rem;
+    }
+  }
 }

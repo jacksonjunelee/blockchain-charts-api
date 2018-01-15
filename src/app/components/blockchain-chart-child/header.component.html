@@ -3,32 +3,32 @@
   <div class="flex-container stats-container">
     <div class="stats-child">
       <h2>Market Price (USD)</h2>
-      <a class="stat-links" href="#"><p>{{stats?.market_price_usd | currency:'USD':'symbol'}}</p></a>
+      <a class="stat-links"><p>{{stats?.market_price_usd | currency:'USD':'symbol'}}</p></a>
       <p class="">Average USD market price across major bitcoin exchanges.</p>
     </div>
     <div class="stats-child">
       <h2>Average Block Size</h2>
-      <a class="stat-links" href="#"><p>{{stats?.blocks_size | bytes}}</p></a>
+      <a class="stat-links"><p>{{stats?.blocks_size | bytes}}</p></a>
       <p class="">The 24 hour average block size in MB.</p>
     </div>
     <div class="stats-child">
       <h2>Transactions per Day</h2>
-      <a class="stat-links" href="#"><p>{{stats?.n_tx | number: '1.0-0'}}</p></a>
+      <a class="stat-links"><p>{{stats?.n_tx | number: '1.0-0'}}</p></a>
       <p class="">The aggregate number of confirmed Bitcoin transactions in the past 24 hours.</p>
     </div>
     <div class="stats-child">
       <h2>Mempool Size</h2>
-      <a class="stat-links" href="#"><p>{{stats?.hash_rate | number: '1.0-0'}}</p></a>
+      <a class="stat-links"><p>{{stats?.hash_rate | number: '1.0-0'}}</p></a>
       <p class="">The aggregate size of transactions waiting to be confirmed.</p>
     </div>
   </div>
 
   <div class="button-group flex-container">
-    <button type="button" (mouseover)="mouseOver(1)">Currency Statistics</button>
-    <button type="button" (mouseover)="mouseOver(2)">Block Details</button>
-    <button type="button" (mouseover)="mouseOver(3)">Mining Information</button>
-    <button type="button" (mouseover)="mouseOver(4)">Network Activity</button>
-    <button type="button" (mouseover)="mouseOver(5)">Blockchain Wallet Activity</button>
+    <button type="button" (mouseover)="mouseOver(1)" [ngClass]="isSelected(1)">Currency Statistics</button>
+    <button type="button" (mouseover)="mouseOver(2)" [ngClass]="isSelected(2)">Block Details</button>
+    <button type="button" (mouseover)="mouseOver(3)" [ngClass]="isSelected(3)">Mining Information</button>
+    <button type="button" (mouseover)="mouseOver(4)" [ngClass]="isSelected(4)">Network Activity</button>
+    <button type="button" (mouseover)="mouseOver(5)" [ngClass]="isSelected(5)">Blockchain Wallet Activity</button>
   </div>
 
 </div>

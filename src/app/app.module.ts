@@ -7,11 +7,13 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { blockChainChartsComponents } from './components/index';
 
-// Pipe
-import { NgMathPipesModule } from 'angular-pipes';
-
 // Services
 import { BlockchainChartsService } from './services/blockchain-charts.service';
+
+// Imports
+import { NgMathPipesModule } from 'angular-pipes';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { LightboxModule } from 'angular2-lightbox';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { BlockchainChartsService } from './services/blockchain-charts.service';
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    NgMathPipesModule
+    NgMathPipesModule,
+    ChartsModule,
+    LightboxModule
   ],
   providers: [BlockchainChartsService, HttpClient, HttpClientModule],
   bootstrap: [AppComponent]

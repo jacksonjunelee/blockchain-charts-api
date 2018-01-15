@@ -18,9 +18,9 @@ button {
    background-color: $link-color;
    background-repeat:no-repeat;
    border: none;
-   cursor:pointer;
+   cursor: pointer;
    overflow: hidden;
-   outline:none;
+   outline: none;
    color: $white-color;
    min-height: 3rem;
    min-width: 14rem;
@@ -29,4 +29,14 @@ button {
    &:hover {
      background-color: $text-color;
    }
+}
+
+a {
+  cursor:pointer;
+
+  &:hover {
+    p {
+      color: $text-color !important;  
+    }
+  }
 }
