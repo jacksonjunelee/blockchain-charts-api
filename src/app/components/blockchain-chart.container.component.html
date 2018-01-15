@@ -8,11 +8,13 @@
   <div *ngIf="displayChart">
     <blockchain-chart-group
       [displayChart]="displayChart"
-      (showChart)="getChart($event)">
+      (showChart)="getChart($event, 'all')">
     </blockchain-chart-group>
   </div>
 </div>
 
 <div class="chart-lightbox">
-  <blockchain-chart-lightbox></blockchain-chart-lightbox>
+  <blockchain-chart-lightbox
+    [chartData]="chartData"
+  ></blockchain-chart-lightbox>
 </div>

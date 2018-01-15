@@ -9,12 +9,13 @@ export class BlockchainChartsService {
 
   constructor(private http: HttpClient) { }
 
-  getCharts() {
-    return;
+  getChart(id: string, timespan='all') {
+    const url = `${this.apiUrl}/charts/${id}?cors=true&timespan=${timespan}`;
+    return this.http.get(url);
   }
 
   getStats(): Observable<Stats> {
-    const url = `${this.apiUrl}/stats`;
+    const url = `${this.apiUrl}/stats?cors=true`;
     return this.http.get(url);
   }
 

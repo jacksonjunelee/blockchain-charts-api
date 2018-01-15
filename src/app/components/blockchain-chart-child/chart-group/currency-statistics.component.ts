@@ -9,7 +9,7 @@ export class CurrencyStatisticsComponent {
 
   public currencyStatisticsList: any = [
     {
-      id: 'bitcoins-in-circulation'
+      id: 'total-bitcoins'
       title: 'Bitcoins in circulation',
       src: 'https://api.blockchain.info/charts/thumbnail/total-bitcoins.png',
       alt: 'Average USD market price across major bitcoin exchanges.',
@@ -23,14 +23,14 @@ export class CurrencyStatisticsComponent {
       text: 'Average USD market price across major bitcoin exchanges.'
     },
     {
-      id: 'market-capitalization'
+      id: 'market-cap'
       title: 'Market Capitalization',
       src: 'https://api.blockchain.info/charts/thumbnail/market-cap.png',
       alt: 'The total USD value of bitcoin supply in circulation.',
       text: 'The total USD value of bitcoin supply in circulation.'
     },
     {
-      id: 'usd-exchange-trade-volume'
+      id: 'trade-volume'
       title: 'USD Exchange Trade Volume',
       src: 'https://api.blockchain.info/charts/thumbnail/trade-volume.png',
       alt: 'The total USD value of trading volume on major bitcoin exchanges.',
