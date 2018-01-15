@@ -9,8 +9,8 @@ export class BlockchainChartsService {
 
   constructor(private http: HttpClient) { }
 
-  getChart(id: string, timespan='all') {
-    const url = `${this.apiUrl}/charts/${id}?cors=true&timespan=${timespan}`;
+  getChart(id: string, timespan: string, rollingAverage: string) {
+    const url = `${this.apiUrl}/charts/${id}?cors=true&timespan=${timespan}&rollingAverage=${rollingAverage}`;
     return this.http.get(url);
   }
 

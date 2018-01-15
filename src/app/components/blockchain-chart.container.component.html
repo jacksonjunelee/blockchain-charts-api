@@ -13,8 +13,10 @@
   </div>
 </div>
 
-<div class="chart-lightbox">
-  <blockchain-chart-lightbox
-    [chartData]="chartData"
-  ></blockchain-chart-lightbox>
+<div class="chart-lightbox-container"*ngIf="showChartModal">
+  <div class="chart-lightbox">
+    <blockchain-chart-lightbox
+      [chartData]="chartData"
+    ></blockchain-chart-lightbox>
+  </div>
 </div>

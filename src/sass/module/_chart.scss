@@ -1,5 +1,6 @@
 .blockchain-chart {
   padding: 1.15rem;
+  position: relative;
 }
 
 .header {
@@ -21,10 +22,25 @@
   .img-container {
     margin: 1rem;
     text-align: center;
-    
+
     img {
       width: 17rem;
       height: 13rem;
     }
+  }
+}
+
+.chart-lightbox-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+
+  .chart-lightbox {
+    width: 80%;
+    height: 100%;
+    margin: 5rem 0 0 7rem;
   }
 }

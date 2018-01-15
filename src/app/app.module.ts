@@ -13,6 +13,8 @@ import { BlockchainChartsService } from './services/blockchain-charts.service';
 // Imports
 import { NgMathPipesModule } from 'angular-pipes';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { DatePipe } from '@angular/common';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     HttpModule,
     HttpClientModule,
     NgMathPipesModule,
-    ChartsModule
+    ChartsModule,
+    Angular2FontawesomeModule
   ],
-  providers: [BlockchainChartsService, HttpClient, HttpClientModule],
+  providers: [BlockchainChartsService, HttpClient, HttpClientModule, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
