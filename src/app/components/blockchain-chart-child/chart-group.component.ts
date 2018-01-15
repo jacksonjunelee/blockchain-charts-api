@@ -9,6 +9,11 @@ import * as chartHelpers from '../helpers';
 })
 export class ChartGroupComponent {
   @Input() displayChart: string;
+  @Output() showChart: EventEmitter<string> = new EventEmitter<string>();
 
   public chartHelpers: any = chartHelpers;
+
+  public clickedChart(event: string): void {
+    this.showChart.emit(event);
+  }
 }

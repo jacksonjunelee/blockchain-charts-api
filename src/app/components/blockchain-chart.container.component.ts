@@ -17,7 +17,11 @@ export class BlockchainChartsContainerComponent {
     });
   }
 
-  showCharts(event) {
+  showCharts(event: string) {
     this.displayChart = event;
+  }
+
+  getChart(event: string) {
+    console.log(event);
   }
 }

@@ -1,5 +1,7 @@
 <div *ngIf="displayChart === chartHelpers.CurrencyStatistics">
-  <blockchain-currency-statistics></blockchain-currency-statistics>
+  <blockchain-currency-statistics
+    (showChart)="clickedChart($event)"
+  ></blockchain-currency-statistics>
 </div>
 <div *ngIf="displayChart === chartHelpers.BlockDetails">
   <blockchain-block-details></blockchain-block-details>

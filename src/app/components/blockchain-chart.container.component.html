@@ -7,7 +7,8 @@
   </div>
   <div *ngIf="displayChart">
     <blockchain-chart-group
-      [displayChart]="displayChart">
+      [displayChart]="displayChart"
+      (showChart)="getChart($event)">
     </blockchain-chart-group>
   </div>
 </div>
