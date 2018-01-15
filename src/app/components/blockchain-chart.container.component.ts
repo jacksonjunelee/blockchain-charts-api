@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { BlockchainChartsService } from '../services/blockchain-charts.service';
+import { OnInit } from '@angular/core';
+import { Stats } from '../models/stats/stats';
 
 @Component({
   selector: 'blockchain-chart-container',
-  templateUrl: './blockchain-chart.container.component.html',
-  styleUrls: ['./blockchain-chart.container.component.css']
+  templateUrl: './blockchain-chart.container.component.html'
 })
 export class BlockchainChartsContainerComponent {
-  title = 'app';
+  public stats: Stats;
+
+  constructor(private blockchainChartsService: BlockchainChartsService) {
+    this.blockchainChartsService.getStats().subscribe((stats) => {
+      this.stats = stats;
+    });
+  }
 }

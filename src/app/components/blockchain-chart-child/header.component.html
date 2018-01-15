@@ -1,0 +1,23 @@
+<h1 class="uppercase">Popular Stats</h1>
+<div class="flex-container">
+  <div class="stats-container">
+    <h2>Market Price (USD)</h2>
+    <p>{{stats?.market_price_usd | currency:'USD':true}}</p>
+    <p class="">Average USD market price across major bitcoin exchanges.</p>
+  </div>
+  <div class="stats-container">
+    <h2>Average Block Size</h2>
+    <p>{{stats?.blocks_size | bytes}}</p>
+    <p class="">The 24 hour average block size in MB.</p>
+  </div>
+  <div class="stats-container">
+    <h2>Transactions per Day</h2>
+    <p>{{stats?.n_tx | number: '1.0-0'}}</p>
+    <p class="">The aggregate number of confirmed Bitcoin transactions in the past 24 hours.</p>
+  </div>
+  <div class="stats-container">
+    <h2>Mempool Size</h2>
+    <p>{{stats?.hash_rate | number: '1.0-0'}}</p>
+    <p class="">The aggregate size of transactions waiting to be confirmed.</p>
+  </div>
+</div>
