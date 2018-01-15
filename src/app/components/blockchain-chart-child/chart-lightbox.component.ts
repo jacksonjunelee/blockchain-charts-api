@@ -8,9 +8,26 @@ import { OnInit, OnChanges } from '@angular/core';
 export class ChartLightboxComponent implements OnChanges  {
   @Input() chartData;
 
+  public data: number[];
+  public labels: number[];
+
+  public formatData(chartData): void {
+    const data = [];
+    const labels = [];
+
+    chartData.values.forEach((datapoint) => {
+      data.push(datapoint['y']);
+      labels.push(datapoint['x']);
+    });
+
+    this.data = data;
+    this.labels = labels;
+  }
+
+
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['chartData']) {
-      console.log(changes);
+    if (changes['chartData'] && changes['chartData'].currentValue) {
+      this.formatData(changes['chartData'].currentValue);
     }
   }
 
