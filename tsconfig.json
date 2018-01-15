@@ -15,5 +15,12 @@
       "es2017",
       "dom"
     ]
-  }
+  },
+  "include": [
+    "src/**/*",
+    "node_modules/angular2-lightbox/lightbox-config.service.ts",
+    "node_modules/angular2-lightbox/lightbox-event.service.ts",
+    "node_modules/angular2-lightbox/lightbox.service.ts",
+    "node_modules/angular2-lightbox/lightbox.module.ts"
+  ]
 }
