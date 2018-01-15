@@ -1,0 +1,7 @@
+<div class="chart-group flex-container flex-wrapper">
+  <div class="img-container" *ngFor="let blockDetails of blockDetailsList">
+    <h3 [innerHTML]="blockDetails.title"></h3>
+    <a><img [src]="blockDetails.src" [alt]="blockDetails.alt"></a>
+    <p>{{blockDetails.text}}</p>
+  </div>
+</div>

@@ -13,7 +13,6 @@ import { BlockchainChartsService } from './services/blockchain-charts.service';
 // Imports
 import { NgMathPipesModule } from 'angular-pipes';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { LightboxModule } from 'angular2-lightbox';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { LightboxModule } from 'angular2-lightbox';
     HttpModule,
     HttpClientModule,
     NgMathPipesModule,
-    ChartsModule,
-    LightboxModule
+    ChartsModule
   ],
   providers: [BlockchainChartsService, HttpClient, HttpClientModule],
   bootstrap: [AppComponent]

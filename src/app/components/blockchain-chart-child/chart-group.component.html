@@ -1,18 +1,15 @@
-<div class="chart-group flex-container">
-  <div class="img-container">
-    <a><img src="https://api.blockchain.info/charts/thumbnail/total-bitcoins.png" alt="The total number of bitcoins that have already been mined."></a>
-    <p>The total number of bitcoins that have already been mined.</p>
-  </div>
-  <div class="img-container">
-    <a><img src="https://api.blockchain.info/charts/thumbnail/market-price.png" alt="The total number of bitcoins that have already been mined."></a>
-    <p>Average USD market price across major bitcoin exchanges.</p>
-  </div>
-  <div class="img-container">
-    <a><img src="https://api.blockchain.info/charts/thumbnail/market-cap.png" alt="The total number of bitcoins that have already been mined."></a>
-    <p>The total USD value of bitcoin supply in circulation.</p>
-  </div>
-  <div class="img-container">
-    <a><img src="https://api.blockchain.info/charts/thumbnail/trade-volume.png" alt="The total number of bitcoins that have already been mined."></a>
-    <p>The total USD value of trading volume on major bitcoin exchanges.</p>
-  </div>
+<div *ngIf="displayChart === chartHelpers.CurrencyStatistics">
+  <blockchain-currency-statistics></blockchain-currency-statistics>
+</div>
+<div *ngIf="displayChart === chartHelpers.BlockDetails">
+  <blockchain-block-details></blockchain-block-details>
+</div>
+<div *ngIf="displayChart === chartHelpers.MiningInformation">
+  <blockchain-mining-information></blockchain-mining-information>
+</div>
+<div *ngIf="displayChart === chartHelpers.NetworkActivity">
+  <blockchain-network-activity></blockchain-network-activity>
+</div>
+<div *ngIf="displayChart === chartHelpers.BlockchainWalletActivity">
+  <blockchain-wallet-activity></blockchain-wallet-activity>
 </div>

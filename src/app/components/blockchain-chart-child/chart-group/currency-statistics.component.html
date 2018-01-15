@@ -1,0 +1,7 @@
+<div class="chart-group flex-container">
+  <div class="img-container" *ngFor=" let currencyStatistics of currencyStatisticsList">
+    <h3>{{currencyStatistics.title}}</h3>
+    <a><img [src]="currencyStatistics.src" [alt]="currencyStatistics.alt"></a>
+    <p>{{currencyStatistics.text}}</p>
+  </div>
+</div>

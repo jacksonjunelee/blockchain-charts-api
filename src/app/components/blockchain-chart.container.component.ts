@@ -9,7 +9,7 @@ import { Stats } from '../models/stats/stats';
 })
 export class BlockchainChartsContainerComponent {
   public stats: Stats;
-  public displayChartNumber: number;
+  public displayChart: string;
 
   constructor(private blockchainChartsService: BlockchainChartsService) {
     this.blockchainChartsService.getStats().subscribe((stats) => {
@@ -18,6 +18,6 @@ export class BlockchainChartsContainerComponent {
   }
 
   showCharts(event) {
-    this.displayChartNumber = event;
+    this.displayChart = event;
   }
 }

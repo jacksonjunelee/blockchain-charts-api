@@ -5,9 +5,13 @@
       (buttonMouseOver)="showCharts($event)">
     </blockchain-chart-header>
   </div>
-  <div *ngIf="displayChartNumber">
+  <div *ngIf="displayChart">
     <blockchain-chart-group
-      [displayChartNumber]="displayChartNumber">
+      [displayChart]="displayChart">
     </blockchain-chart-group>
   </div>
+</div>
+
+<div class="chart-lightbox">
+  <blockchain-chart-lightbox></blockchain-chart-lightbox>
 </div>

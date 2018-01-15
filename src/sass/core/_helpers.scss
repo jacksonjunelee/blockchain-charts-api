@@ -1,3 +1,11 @@
 .uppercase {
   text-transform: uppercase;
 }
+
+.flex-wrapper {
+  flex-wrap: wrap;
+
+  div {
+    flex: 0 0 20%;
+  }
+}

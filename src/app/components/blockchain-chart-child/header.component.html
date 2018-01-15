@@ -24,11 +24,7 @@
   </div>
 
   <div class="button-group flex-container">
-    <button type="button" (mouseover)="mouseOver(1)" [ngClass]="isSelected(1)">Currency Statistics</button>
-    <button type="button" (mouseover)="mouseOver(2)" [ngClass]="isSelected(2)">Block Details</button>
-    <button type="button" (mouseover)="mouseOver(3)" [ngClass]="isSelected(3)">Mining Information</button>
-    <button type="button" (mouseover)="mouseOver(4)" [ngClass]="isSelected(4)">Network Activity</button>
-    <button type="button" (mouseover)="mouseOver(5)" [ngClass]="isSelected(5)">Blockchain Wallet Activity</button>
+    <button type="button" *ngFor="let button of buttonLists" (mouseover)="mouseOver(button.chart)" [ngClass]="isSelected(button.chart)">{{button.text}}</button>
   </div>
 
 </div>
