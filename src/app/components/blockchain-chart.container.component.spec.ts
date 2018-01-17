@@ -19,17 +19,6 @@ describe('Blockchain Chart Container', () => {
     }).compileComponents();
   }));
 
-  // beforeEach(() => {
-  //   fixture = TestBed.createComponent(BlockchainChartsContainerComponent);
-  //   comp = fixture.debugElement.componentInstance;
-  //
-  //
-  //   // fixture.detectChanges();
-  // });
-
-    // afterEach(() => { fixture.destroy() });
-
-
   it('should be defined', () => {
     const fixture = TestBed.createComponent(BlockchainChartsContainerComponent);
     const comp = fixture.debugElement.componentInstance;
@@ -40,6 +29,29 @@ describe('Blockchain Chart Container', () => {
     const fixture = TestBed.createComponent(BlockchainChartsContainerComponent);
     const comp = fixture.debugElement.componentInstance;
     const statsMock = StatsMock;
-    expect(comp.stats.market_price_usd).toBe(statsMock.market_price_usd);
+    expect(comp.stats).toBe(statsMock);
+  });
+
+  it('should get chart data and show chart modal', () => {
+    const fixture = TestBed.createComponent(BlockchainChartsContainerComponent);
+    const comp = fixture.debugElement.componentInstance;
+    const chartMock = ChartMock;
+    const id = 'market-price';
+    comp.getChart(id);
+    expect(comp.chartData).toBe(chartMock);
+    expect(comp.showChartModal).toBeTruthy;
+    expect(comp.selectedChart).toBe(id);
+  });
+
+  it('should close chart modal and reset data', () => {
+    const fixture = TestBed.createComponent(BlockchainChartsContainerComponent);
+    const comp = fixture.debugElement.componentInstance;
+    const chartMock = ChartMock;
+    const id = 'market-price';
+    comp.getChart(id);
+    comp.closeChartModal();
+    expect(comp.chartData).toBeFalsy;
+    expect(comp.showChartModal).toBeFalsy;
+    expect(comp.selectedChart).toBeFalsy;
   })
 });

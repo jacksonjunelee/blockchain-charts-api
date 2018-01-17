@@ -32,7 +32,7 @@ export class ChartComponent implements OnChanges  {
     // workaround for ng2-charts bug
     setTimeout(() => this.labels = labels, 0);
   }
-  
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes['chartData'] && changes['chartData'].currentValue) {
       this.formatData(changes['chartData'].currentValue);

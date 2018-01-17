@@ -38,11 +38,11 @@ export class BlockchainChartsContainerComponent {
     this.showChartModal = false;
   }
 
-  showCharts(event: string): void {
+  public showCharts(event: string): void {
     this.displayChart = event;
   }
 
-  getChart(event: string, timespan = 'all', rollingAverage = '1months'): void {
+  public getChart(event: string, timespan = 'all', rollingAverage = '1months'): void {
     this.blockchainChartsService.getChart(event, timespan, rollingAverage).subscribe((chartData) => {
       this.selectedChart = event;
       this.chartData = chartData;

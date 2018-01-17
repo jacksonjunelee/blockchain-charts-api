@@ -11,7 +11,6 @@ import { blockChainChartsComponents } from './components/index';
 import { BlockchainChartsService } from './services/blockchain-charts.service';
 
 // Imports
-import { NgMathPipesModule } from 'angular-pipes';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { DatePipe } from '@angular/common';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
@@ -25,7 +24,6 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    NgMathPipesModule,
     ChartsModule,
     Angular2FontawesomeModule
   ],

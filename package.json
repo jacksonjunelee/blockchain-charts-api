@@ -21,7 +21,6 @@
     "@angular/platform-browser": "^5.1.0",
     "@angular/platform-browser-dynamic": "^5.1.0",
     "@angular/router": "^5.1.0",
-    "angular-pipes": "^6.5.3",
     "angular2-fontawesome": "^0.9.3",
     "angular2-lightbox": "^1.2.1",
     "chart.js": "^2.7.1",

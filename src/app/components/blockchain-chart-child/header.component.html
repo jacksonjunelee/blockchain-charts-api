@@ -8,8 +8,8 @@
     </div>
     <div class="stats-child">
       <h2>Average Block Size</h2>
-      <a (click)="clickedChart('avg-block-size')" class="stat-links"><p>{{stats?.blocks_size | bytes}}</p></a>
-      <p class="">The 24 hour average block size in MB.</p>
+      <a (click)="clickedChart('avg-block-size')" class="stat-links"><p>{{stats?.blocks_size | number: '1.0-0'}}</p></a>
+      <p class="">The 24 hour average block size in Bytes.</p>
     </div>
     <div class="stats-child">
       <h2>Transactions per Day</h2>
