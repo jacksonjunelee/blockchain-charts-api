@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BlockchainChartsService } from '../services/blockchain-charts.service';
 import { OnInit } from '@angular/core';
 import { Stats } from '../models/stats/stats';
+import { Chart } from '../models/charts/chart';
 
 import * as chartHelpers from './helpers';
 
@@ -12,7 +13,7 @@ import * as chartHelpers from './helpers';
 export class BlockchainChartsContainerComponent {
   public stats: Stats;
   public displayChart: string;
-  public chartData;
+  public chartData: Chart;
   public showChartModal: boolean;
   public selectedChart: string;
 
@@ -37,11 +38,11 @@ export class BlockchainChartsContainerComponent {
     this.showChartModal = false;
   }
 
-  showCharts(event: string) {
+  showCharts(event: string): void {
     this.displayChart = event;
   }
 
-  getChart(event: string, timespan = 'all', rollingAverage = '1months') {
+  getChart(event: string, timespan = 'all', rollingAverage = '1months'): void {
     this.blockchainChartsService.getChart(event, timespan, rollingAverage).subscribe((chartData) => {
       this.selectedChart = event;
       this.chartData = chartData;
