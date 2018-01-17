@@ -17,6 +17,9 @@ export class BlockchainChartsContainerComponent {
   public selectedChart: string;
 
   public timeLists = [
+    {time: '1months', text: '1 month'},
+    {time: '2months', text: '2 month'},
+    {time: '3months', text: '3 month'},
     {time: '1years', text: '12 month'},
     {time: '2years', text: '24 month'},
     {time: 'all', text: 'All Time'}
@@ -30,6 +33,7 @@ export class BlockchainChartsContainerComponent {
 
   public closeChartModal(): void {
     this.selectedChart = null;
+    this.chartData = null;
     this.showChartModal = false;
   }
 

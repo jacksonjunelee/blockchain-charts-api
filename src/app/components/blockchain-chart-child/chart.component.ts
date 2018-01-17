@@ -10,8 +10,8 @@ import { DatePipe } from '@angular/common';
 export class ChartComponent implements OnChanges  {
   @Input() chartData;
 
-  public data: number[] = [];
-  public labels: number[] = [];
+  public data: number[];
+  public labels: number[];
 
   constructor(private datePipe: DatePipe) {}
 
@@ -22,24 +22,19 @@ export class ChartComponent implements OnChanges  {
     chartData.values.forEach((datapoint) => {
       const unix_timestamp = datapoint['x'];
       const date = new Date(unix_timestamp * 1000);
-      const dateFormat = this.datePipe.transform(date, 'MMM yy');
+      const dateFormat = this.datePipe.transform(date, 'MMM dd, yy');
 
       data.push(datapoint['y']);
       labels.push(dateFormat);
     });
-
-    console.log(data);
-    console.log(labels);
-
     this.data = data;
-    this.labels = labels;
+
+    // workaround for ng2-charts bug
+    setTimeout(() => this.labels = labels, 0);
   }
-
-
+  
   ngOnChanges(changes: SimpleChanges) {
     if (changes['chartData'] && changes['chartData'].currentValue) {
-      this.data = [];
-      this.labels = [];
       this.formatData(changes['chartData'].currentValue);
     }
   }

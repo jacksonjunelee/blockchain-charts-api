@@ -3,22 +3,22 @@
   <div class="flex-container stats-container">
     <div class="stats-child">
       <h2>Market Price (USD)</h2>
-      <a class="stat-links"><p>{{stats?.market_price_usd | currency:'USD':'symbol'}}</p></a>
+      <a (click)="clickedChart('market-price')" class="stat-links"><p>{{stats?.market_price_usd | currency:'USD':'symbol'}}</p></a>
       <p class="">Average USD market price across major bitcoin exchanges.</p>
     </div>
     <div class="stats-child">
       <h2>Average Block Size</h2>
-      <a class="stat-links"><p>{{stats?.blocks_size | bytes}}</p></a>
+      <a (click)="clickedChart('avg-block-size')" class="stat-links"><p>{{stats?.blocks_size | bytes}}</p></a>
       <p class="">The 24 hour average block size in MB.</p>
     </div>
     <div class="stats-child">
       <h2>Transactions per Day</h2>
-      <a class="stat-links"><p>{{stats?.n_tx | number: '1.0-0'}}</p></a>
+      <a (click)="clickedChart('n-transactions')" class="stat-links"><p>{{stats?.n_tx | number: '1.0-0'}}</p></a>
       <p class="">The aggregate number of confirmed Bitcoin transactions in the past 24 hours.</p>
     </div>
     <div class="stats-child">
       <h2>Mempool Size</h2>
-      <a class="stat-links"><p>{{stats?.hash_rate | number: '1.0-0'}}</p></a>
+      <a (click)="clickedChart('mempool-size')" class="stat-links"><p>{{stats?.hash_rate | number: '1.0-0'}}</p></a>
       <p class="">The aggregate size of transactions waiting to be confirmed.</p>
     </div>
   </div>

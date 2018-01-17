@@ -11,6 +11,7 @@ import * as chartHelpers from '../helpers';
 export class HeaderComponent {
   @Input() stats: Stats;
   @Output() buttonMouseOver: EventEmitter<string> = new EventEmitter<string>();
+  @Output() showChart: EventEmitter<string> = new EventEmitter<string>();
 
   public buttonLists: any = [
     {chart: chartHelpers.CurrencyStatistics, text: chartHelpers.CurrencyStatisticsText},
@@ -28,5 +29,9 @@ export class HeaderComponent {
   public mouseOver(chart: string): void {
     this.selectedButton = chart;
     this.buttonMouseOver.emit(chart);
+  }
+
+  public clickedChart(id: string) {
+    this.showChart.emit(id);
   }
 }

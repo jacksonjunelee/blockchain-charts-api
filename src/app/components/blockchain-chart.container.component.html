@@ -2,7 +2,8 @@
   <div *ngIf="stats">
     <blockchain-chart-header
       [stats]="stats"
-      (buttonMouseOver)="showCharts($event)">
+      (buttonMouseOver)="showCharts($event)"
+      (showChart)="getChart($event, 'all')">
     </blockchain-chart-header>
   </div>
   <div *ngIf="displayChart">
