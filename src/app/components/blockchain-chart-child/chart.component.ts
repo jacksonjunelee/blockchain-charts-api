@@ -4,14 +4,14 @@ import { OnInit, OnChanges } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'blockchain-chart-lightbox',
-  templateUrl: './chart-lightbox.component.html'
+  selector: 'blockchain-chart',
+  templateUrl: './chart.component.html'
 })
-export class ChartLightboxComponent implements OnChanges  {
+export class ChartComponent implements OnChanges  {
   @Input() chartData;
 
-  public data: number[];
-  public labels: number[];
+  public data: number[] = [];
+  public labels: number[] = [];
 
   constructor(private datePipe: DatePipe) {}
 
@@ -28,6 +28,9 @@ export class ChartLightboxComponent implements OnChanges  {
       labels.push(dateFormat);
     });
 
+    console.log(data);
+    console.log(labels);
+
     this.data = data;
     this.labels = labels;
   }
@@ -35,6 +38,8 @@ export class ChartLightboxComponent implements OnChanges  {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['chartData'] && changes['chartData'].currentValue) {
+      this.data = [];
+      this.labels = [];
       this.formatData(changes['chartData'].currentValue);
     }
   }

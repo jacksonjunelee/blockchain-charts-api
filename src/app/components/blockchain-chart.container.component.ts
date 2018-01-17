@@ -14,6 +14,13 @@ export class BlockchainChartsContainerComponent {
   public displayChart: string;
   public chartData;
   public showChartModal: boolean;
+  public selectedChart: string;
+
+  public timeLists = [
+    {time: '1years', text: '12 month'},
+    {time: '2years', text: '24 month'},
+    {time: 'all', text: 'All Time'}
+  ]
 
   constructor(private blockchainChartsService: BlockchainChartsService) {
     this.blockchainChartsService.getStats().subscribe((stats) => {
@@ -21,8 +28,9 @@ export class BlockchainChartsContainerComponent {
     });
   }
 
-  public toggleChartModal(): void {
-    this.showChartModal = !this.showChartModal;
+  public closeChartModal(): void {
+    this.selectedChart = null;
+    this.showChartModal = false;
   }
 
   showCharts(event: string) {
@@ -31,6 +39,7 @@ export class BlockchainChartsContainerComponent {
 
   getChart(event: string, timespan = 'all', rollingAverage = '1months') {
     this.blockchainChartsService.getChart(event, timespan, rollingAverage).subscribe((chartData) => {
+      this.selectedChart = event;
       this.chartData = chartData;
     });
     this.showChartModal = true;
