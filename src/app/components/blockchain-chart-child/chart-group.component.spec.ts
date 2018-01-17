@@ -19,7 +19,7 @@ describe('Chart Group Component', () => {
   });
 
   it('should emit when charts are clicked', () => {
-    const fixture = TestBed.createComponent(ChartGroupComponent;
+    const fixture = TestBed.createComponent(ChartGroupComponent);
     const comp = fixture.debugElement.componentInstance;
     spyOn(comp.showChart, 'emit');
     comp.clickedChart('market-price');
