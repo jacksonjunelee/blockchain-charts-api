@@ -29,6 +29,8 @@ export class BlockchainChartsContainerComponent {
   constructor(private blockchainChartsService: BlockchainChartsService) {
     this.blockchainChartsService.getStats().subscribe((stats) => {
       this.stats = stats;
+    }, (error) => {
+      console.log('cannot get stats from stats endpoint');
     });
   }
 
@@ -46,6 +48,8 @@ export class BlockchainChartsContainerComponent {
     this.blockchainChartsService.getChart(event, timespan, rollingAverage).subscribe((chartData) => {
       this.selectedChart = event;
       this.chartData = chartData;
+    }, (error) => {
+      console.log('cannot get charts from charts endpoint');
     });
     this.showChartModal = true;
   }
